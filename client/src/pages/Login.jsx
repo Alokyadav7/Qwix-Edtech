@@ -86,8 +86,8 @@ export default function Login() {
       >
         <div className="text-center mb-8">
           <Link to="/" className="inline-block">
-            <span className="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-electric-400 to-violet-400">
-              Opportunity OS
+            <span className="text-2xl font-display font-bold text-white tracking-tight">
+              Qwix
             </span>
           </Link>
           <h2 className="text-xl font-display font-semibold text-white mt-4">

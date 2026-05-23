@@ -54,7 +54,7 @@ function AppLayout() {
       
       <div className="flex-1 flex pt-16">
         {isAuthenticated && (
-          <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+          <Sidebar collapsed={!sidebarOpen} onToggle={() => setSidebarOpen(!sidebarOpen)} />
         )}
         
         <main className="flex-1 min-h-[calc(100vh-64px)] pb-20 md:pb-6 relative overflow-x-hidden">

@@ -3,7 +3,6 @@ import { resumeAPI } from "../lib/api.js";
 import { toast } from "react-hot-toast";
 import {
   FileText,
-  Sparkles,
   Download,
   Plus,
   Trash2,
@@ -60,7 +59,7 @@ export default function ResumeLab() {
           personalInfo: { name: "Arjun Mehta", email: "arjun@university.edu", phone: "9876543210", github: "github.com/arjun", linkedin: "linkedin.com/in/arjun" },
           education: [{ school: "Delhi Technological University", degree: "B.Tech Computer Science", startYear: "2022", endYear: "2026", gpa: "9.2" }],
           experience: [{ company: "Google Summer of Code", role: "Contributor", description: "Built high-concurrency stream buffers using Node.js.", startDate: "May 2024", endDate: "Aug 2024" }],
-          projects: [{ title: "Opportunity OS", description: "Vite + Express platform resolving automated resume optimization processes.", link: "github.com/arjun/opp-os" }],
+          projects: [{ title: "Qwix", description: "Vite + Express platform resolving automated resume optimization processes.", link: "github.com/arjun/qwix" }],
           skills: ["React", "Node.js", "MongoDB", "Redis", "TypeScript", "Algorithms"]
         });
         setResume(newRes);
@@ -206,8 +205,8 @@ export default function ResumeLab() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-gradient-to-r from-navy-900/60 to-electric-500/5 p-6 rounded-2xl border border-electric-500/10">
         <div>
           <h1 className="text-2xl sm:text-3xl font-display font-bold text-white flex items-center gap-2">
-            <FileText className="h-6 w-6 text-electric-400" />
-            AI Resume Lab & ATS Engine
+            <FileCheck className="h-6 w-6 text-electric-400" />
+            Resume Lab & ATS Engine
           </h1>
           <p className="text-xs text-gray-400 mt-1">
             Build resume profiles, live compile styled templates, and check against target job descriptions for keyword scoring.
@@ -443,7 +442,7 @@ export default function ResumeLab() {
               rows={4}
               className="w-full p-2 bg-navy-950 border border-electric-500/10 rounded-lg text-xs text-white placeholder-gray-600 focus:outline-none focus:border-electric-400"
             />
-            <Button onClick={handleAtsAnalysis} loading={analyzingAts} icon={Sparkles} className="w-full">
+            <Button onClick={handleAtsAnalysis} loading={analyzingAts} icon={FileCheck} className="w-full">
               Run ATS Optimizer
             </Button>
           </Card>

@@ -4,7 +4,7 @@ import {
   Trophy,
   Briefcase,
   Terminal,
-  Sparkles,
+  BookOpen,
   FileSpreadsheet,
   LineChart,
   Users,
@@ -19,6 +19,7 @@ import Button from "../components/ui/Button.jsx";
 import Card from "../components/ui/Card.jsx";
 import Badge from "../components/ui/Badge.jsx";
 import CountdownTimer from "../components/ui/CountdownTimer.jsx";
+import Navbar from "../components/layout/Navbar.jsx";
 
 export default function Home() {
   const stats = [
@@ -31,7 +32,7 @@ export default function Home() {
   const features = [
     {
       title: "Smart Job Matching",
-      desc: "Our AI-powered engine analyzes your projects, skills, and resume to match you with best-fit roles.",
+      desc: "Our intelligent matching engine analyzes your projects, skills, and resume to match you with best-fit roles.",
       icon: Target,
       cols: "md:col-span-2",
       visual: (
@@ -66,18 +67,16 @@ export default function Home() {
       )
     },
     {
-      title: "AI Mock Interviews",
+      title: "Mock Prep Simulator",
       desc: "Receive professional technical and behavioral feedback instantly, scored question by question.",
-      icon: Sparkles,
+      icon: BookOpen,
       cols: "md:col-span-1",
       visual: (
-        <div className="mt-4 flex flex-col gap-2">
-          <div className="bg-navy-950/60 p-3 rounded-lg border border-electric-500/10 text-xs text-gray-300">
-            <span className="text-violet-400 font-semibold">AI:</span> Tell me about yourself.
-          </div>
-          <div className="bg-electric-500/10 p-3 rounded-lg border border-electric-500/20 text-xs text-electric-300">
-            <span className="font-semibold">You:</span> I build full-stack React systems...
-          </div>
+        <div className="mt-4 bg-navy-950/60 p-4 rounded-xl border border-electric-500/10 font-mono text-xs text-gray-400">
+          <div className="text-white font-semibold">Ready to begin mock interview...</div>
+          <div className="text-gray-500 mt-1">&gt; Loaded Question Bank (Behavioral)</div>
+          <div className="text-gray-500">&gt; Audio/Video settings checked</div>
+          <div className="text-green-400 mt-2">Active Session: Behavioral Mock S2</div>
         </div>
       )
     },
@@ -139,7 +138,7 @@ export default function Home() {
       desc: "Essential features for all students to get started.",
       features: [
         "Apply to 10 jobs/month",
-        "3 AI interview practice sessions",
+        "3 mock interview practice sessions",
         "Basic resume templates",
         "Join public coding contests"
       ],
@@ -153,7 +152,7 @@ export default function Home() {
       desc: "Unlock superpowers to boost placement success.",
       features: [
         "Apply to unlimited jobs",
-        "Unlimited AI mock interviews",
+        "Unlimited mock interviews",
         "ATS resume keyword optimizer",
         "Priority match recommendations",
         "Advanced career growth graphs"
@@ -169,7 +168,7 @@ export default function Home() {
       desc: "Premium recruiting toolsets for HR & colleges.",
       features: [
         "Post unlimited jobs & internships",
-        "AI applicant screening & matching",
+        "Automated applicant screening & matching",
         "Host private coding hackathons",
         "Full analytics dashboards"
       ],
@@ -180,6 +179,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-navy-950 overflow-x-hidden relative">
+      <Navbar onToggleSidebar={() => {}} />
       
       {/* Background Orbs */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-electric-500/10 rounded-full blur-[120px] pointer-events-none" />
@@ -190,7 +190,7 @@ export default function Home() {
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.03]" 
         style={{
-          backgroundImage: "radial-gradient(rgba(14, 165, 233, 0.4) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)",
           backgroundSize: "40px 40px"
         }}
       />
@@ -226,7 +226,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-gray-400 text-lg sm:text-xl max-w-2xl leading-relaxed"
         >
-          Internships, coding contests, hackathons, AI interview prep, and ATS resume evaluations—everything you need to stand out and get hired.
+          Internships, coding contests, hackathons, mock prep, and ATS resume evaluations—everything you need to stand out and get hired.
         </motion.p>
 
         {/* CTA Actions */}
@@ -376,8 +376,8 @@ export default function Home() {
                   <Badge variant="electric" size="sm">REGISTRATIONS OPEN</Badge>
                   <Badge variant="ghost" size="sm">Web App</Badge>
                 </div>
-                <h3 className="text-base font-semibold text-white">HackIndia 2026 — AI Challenge</h3>
-                <p className="text-gray-400 text-xs mt-2">Build products targeting environmental sustainability using Generative AI.</p>
+                <h3 className="text-base font-semibold text-white">HackIndia 2026 — Dev Challenge</h3>
+                <p className="text-gray-400 text-xs mt-2">Build products targeting environmental sustainability using modern web and mobile tech.</p>
                 <div className="mt-4 flex flex-col gap-1">
                   <span className="text-xs text-gray-400">Starts in: 5 days</span>
                   <span className="text-xs text-gray-400">Team Size: 2–4 members</span>
@@ -479,8 +479,8 @@ export default function Home() {
       <footer className="bg-navy-950 border-t border-electric-500/10 pt-16 pb-8 relative z-10">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <span className="text-lg font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-electric-400 to-violet-400">
-              Opportunity OS
+            <span className="text-lg font-display font-bold text-white tracking-tight">
+              Qwix
             </span>
             <p className="text-gray-500 text-xs mt-3 leading-relaxed">
               Automating career discovery, training, testing, and resume creation for the next generation of builders.
@@ -519,7 +519,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 border-t border-navy-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-          <span>© 2026 Opportunity OS. Made with ❤️ for Indian Students.</span>
+          <span>© 2026 Qwix. Made with ❤️ for Indian Students.</span>
           <div className="flex gap-4">
             <a href="#" className="hover:text-white">Privacy Policy</a>
             <a href="#" className="hover:text-white">Terms of Service</a>

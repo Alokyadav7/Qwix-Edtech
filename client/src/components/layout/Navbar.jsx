@@ -1,4 +1,4 @@
-import { Bell, Menu, X, LogOut, Briefcase, GraduationCap, Code, FileText, Sparkles, PlusCircle } from "lucide-react";
+import { Bell, Menu, X, LogOut, Briefcase, GraduationCap, Code, FileText, BookOpen, PlusCircle } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useNotifications } from "../../context/NotificationContext.jsx";
@@ -17,7 +17,7 @@ export default function Navbar({ onToggleSidebar }) {
     { name: "Contests", path: "/contests", icon: Code },
     { name: "Hackathons", path: "/hackathons", icon: GraduationCap },
     { name: "Resume Lab", path: "/resume", icon: FileText },
-    { name: "AI Tools", path: "/ai-tools", icon: Sparkles }
+    { name: "Mock Prep", path: "/ai-interview", icon: BookOpen }
   ];
 
   return (
@@ -36,8 +36,8 @@ export default function Navbar({ onToggleSidebar }) {
             </button>
           )}
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-electric-400 via-electric-300 to-violet-400 tracking-tight">
-              Opportunity OS
+            <span className="text-xl font-display font-bold text-white tracking-tight">
+              Qwix
             </span>
           </Link>
         </div>
@@ -203,12 +203,21 @@ export default function Navbar({ onToggleSidebar }) {
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-1.5 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-electric-500 to-violet-500 hover:shadow-glow-card transition-all duration-200"
+                className="px-4 py-1.5 rounded-lg text-sm font-semibold text-navy-950 bg-gradient-to-r from-electric-500 to-violet-500 hover:shadow-glow-card transition-all duration-200"
               >
                 Get Started
               </Link>
             </div>
           )}
+
+          {/* Hamburger for mobile menu */}
+          <button
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-navy-800/60 focus:outline-none"
+            type="button"
+          >
+            {showMobileMenu ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
 

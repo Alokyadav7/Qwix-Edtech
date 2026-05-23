@@ -4,9 +4,9 @@ import {
   GraduationCap,
   Code,
   FileText,
-  Sparkles,
+  BookOpen,
+  CheckSquare,
   UserCheck,
-  Settings,
   LogOut,
   ChevronLeft,
   ChevronRight,
@@ -43,10 +43,10 @@ export default function Sidebar({ collapsed, onToggle }) {
       ]
     },
     {
-      title: "AI Tools & Labs",
+      title: "Prep & Labs",
       items: [
-        { name: "AI Interview", path: "/ai-interview", icon: Sparkles },
-        { name: "AI Tests", path: "/ai-tests", icon: Settings },
+        { name: "Mock Prep", path: "/ai-interview", icon: BookOpen },
+        { name: "Assessments", path: "/ai-tests", icon: CheckSquare },
         { name: "Resume Lab", path: "/resume", icon: FileText }
       ]
     },

@@ -1,4 +1,4 @@
-import { Home, Briefcase, Code, Sparkles, User } from "lucide-react";
+import { Home, Briefcase, Code, BookOpen, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useNotifications } from "../../context/NotificationContext.jsx";
 
@@ -10,7 +10,7 @@ export default function MobileTabBar() {
     { name: "Home", path: "/", icon: Home },
     { name: "Jobs", path: "/opportunities", icon: Briefcase },
     { name: "Compete", path: "/contests", icon: Code },
-    { name: "AI Tools", path: "/ai-interview", icon: Sparkles },
+    { name: "Mock Prep", path: "/ai-interview", icon: BookOpen },
     { name: "Profile", path: "/profile", icon: User }
   ];
 
@@ -44,7 +44,7 @@ export default function MobileTabBar() {
             {isActive && (
               <span className="absolute bottom-1 h-1 w-1 bg-electric-400 rounded-full" />
             )}
-            {tab.name === "AI Tools" && unreadCount > 0 && (
+            {tab.name === "Mock Prep" && unreadCount > 0 && (
               <span className="absolute top-2 right-4 h-2 w-2 rounded-full bg-coral-500" />
             )}
           </Link>
